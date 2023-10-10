@@ -1,0 +1,16 @@
+{
+    "$schema": "http://json-schema.org/schema",
+    "version": 2,
+    "title": "BuildMeExecutorOptions",
+    "description": "Configuration options indirectly building a module",
+    "type": "object",
+    "required": [],
+    "properties": {
+      "skip": {
+        "description": "Whether to skip the executor or not. Default is false",
+        "type": "boolean"
+      }
+    },
+    "additionalProperties": false
+  }
+  

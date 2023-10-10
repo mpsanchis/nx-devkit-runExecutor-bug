@@ -1,0 +1,12 @@
+{
+    "name": "@mpsanchis/nx-builder-lib",
+    "version": "0.0.0",
+    "type": "commonjs",
+    "executors": "./executors.json",
+    "dependencies": {
+    },
+    "peerDependencies": {
+      "@nx/devkit": ">=16.0.0"
+    }
+  }
+  

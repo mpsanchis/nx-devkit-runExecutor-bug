@@ -6,6 +6,13 @@
   "generators": {},
   "targets": {
     "build": {
+      "executor": "nx:noop",
+      "dependsOn": ["build-webpack"]
+    },
+    "build-me": {
+      "executor": "@mpsanchis/nx-builder-lib:buildme"
+    },
+    "build-webpack": {
       "executor": "@nx/webpack:webpack",
       "options": {
         "outputPath": "dist/apps/cart",

@@ -1,0 +1,10 @@
+{
+    "$schema": "http://json-schema.org/schema",
+    "executors": {
+      "buildme": {
+        "implementation": "./src/executors/buildme/executor",
+        "schema": "./src/executors/buildme/schema.json",
+        "description": "Build your libraries... in an indirect mode"
+      }
+    }
+  }

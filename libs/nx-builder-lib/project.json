@@ -1,0 +1,49 @@
+{
+    "name": "nx-builder-lib",
+    "$schema": "../../node_modules/nx/schemas/project-schema.json",
+    "sourceRoot": "libs/builder-lib/src",
+    "projectType": "library",
+    "targets": {
+        "build": {
+            "executor": "nx:noop",
+            "dependsOn": ["nx-plugin-build"]
+        },
+        "nx-plugin-build"              : {
+            "executor": "@nx/js:tsc",
+            "outputs" : [
+              "{options.outputPath}"
+            ],
+            "options" : {
+              "outputPath"                             : "dist/{projectRoot}",
+              "main"                                   : "{projectRoot}/src/index.ts",
+              "tsConfig"                               : "{projectRoot}/tsconfig.lib.json",
+              "updateBuildableProjectDepsInPackageJson": true,
+              "assets"                                 : [
+                "{projectRoot}/*.md",
+                {
+                  "input" : "./{projectRoot}/src",
+                  "glob"  : "**/!(*.ts)",
+                  "output": "./src"
+                },
+                {
+                  "input" : "./{projectRoot}/src",
+                  "glob"  : "**/*.d.ts",
+                  "output": "./src"
+                },
+                {
+                  "input" : "./{projectRoot}",
+                  "glob"  : "generators.json",
+                  "output": "."
+                },
+                {
+                  "input" : "./{projectRoot}",
+                  "glob"  : "executors.json",
+                  "output": "."
+                }
+              ]
+            }
+          }
+    },
+    "tags": []
+  }
+  
